@@ -1,0 +1,3 @@
+[submodule "3rd/diffusers"]
+	path = 3rd/diffusers
+	url = git@github.com:Alexankharin/diffusers.git
