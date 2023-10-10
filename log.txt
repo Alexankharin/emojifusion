@@ -1,0 +1,34 @@
+The following values were not passed to `accelerate launch` and had defaults used instead:
+	`--num_processes` was set to a value of `1`
+	`--num_machines` was set to a value of `1`
+	`--dynamo_backend` was set to a value of `'no'`
+To avoid this warning pass in values for each of the problematic parameters or run `accelerate config`.
+/opt/conda/lib/python3.10/site-packages/accelerate/accelerator.py:382: UserWarning: `log_with=tensorboard` was passed but no supported trackers are currently installed.
+  warnings.warn(f"`log_with={log_with}` was passed but no supported trackers are currently installed.")
+10/08/2023 18:13:50 - INFO - __main__ - Distributed environment: NO
+Num processes: 1
+Process index: 0
+Local process index: 0
+Device: cuda
+
+Mixed precision type: fp16
+
+{'prediction_type', 'timestep_spacing', 'dynamic_thresholding_ratio', 'clip_sample_range', 'thresholding', 'variance_type', 'sample_max_value'} was not found in config. Values will be initialized to default values.
+Traceback (most recent call last):
+  File "/workspace/emojifusion/3rd/diffusers/examples/text_to_image/train_text_to_image_lora.py", line 929, in <module>
+    main()
+  File "/workspace/emojifusion/3rd/diffusers/examples/text_to_image/train_text_to_image_lora.py", line 419, in main
+    tokenizer = CLIPTokenizer.from_pretrained(
+  File "/opt/conda/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 2029, in from_pretrained
+    raise EnvironmentError(
+OSError: Can't load tokenizer for 'lambdalabs/sd-image-variations-diffusers'. If you were trying to load it from 'https://huggingface.co/models', make sure you don't have a local directory with the same name. Otherwise, make sure 'lambdalabs/sd-image-variations-diffusers' is the correct path to a directory containing all relevant files for a CLIPTokenizer tokenizer.
+Traceback (most recent call last):
+  File "/opt/conda/bin/accelerate", line 8, in <module>
+    sys.exit(main())
+  File "/opt/conda/lib/python3.10/site-packages/accelerate/commands/accelerate_cli.py", line 47, in main
+    args.func(args)
+  File "/opt/conda/lib/python3.10/site-packages/accelerate/commands/launch.py", line 986, in launch_command
+    simple_launcher(args)
+  File "/opt/conda/lib/python3.10/site-packages/accelerate/commands/launch.py", line 628, in simple_launcher
+    raise subprocess.CalledProcessError(returncode=process.returncode, cmd=cmd)
+subprocess.CalledProcessError: Command '['/opt/conda/bin/python', '3rd/diffusers/examples/text_to_image/train_text_to_image_lora.py', '--pretrained_model_name_or_path=lambdalabs/sd-image-variations-diffusers', '--dataset_name=data/emojis/emojisdescr.hf', '--dataloader_num_workers=8', '--resolution=512', '--center_crop', '--random_flip', '--train_batch_size=1', '--gradient_accumulation_steps=4', '--max_train_steps=5000', '--learning_rate=1e-04', '--max_grad_norm=1', '--lr_scheduler=cosine', '--lr_warmup_steps=0', '--output_dir=weights/finetuned_emojis_2', '--checkpointing_steps=500', '--validation_prompt=A face of evil gnome.', '--seed=1337']' returned non-zero exit status 1.
