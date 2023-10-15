@@ -1,6 +1,6 @@
 data/*
 vc/*
 weights/*/*
-!weights/pytorch_lora_weights.safetensors
+!weights/finetuned_emojis_2/pytorch_lora_weights.safetensors
 !data/*.json
 !data/*.xml
