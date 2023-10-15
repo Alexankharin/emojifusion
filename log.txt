@@ -5,7 +5,7 @@ The following values were not passed to `accelerate launch` and had defaults use
 To avoid this warning pass in values for each of the problematic parameters or run `accelerate config`.
 /opt/conda/lib/python3.10/site-packages/accelerate/accelerator.py:382: UserWarning: `log_with=tensorboard` was passed but no supported trackers are currently installed.
   warnings.warn(f"`log_with={log_with}` was passed but no supported trackers are currently installed.")
-10/08/2023 18:13:50 - INFO - __main__ - Distributed environment: NO
+10/15/2023 19:08:35 - INFO - __main__ - Distributed environment: NO
 Num processes: 1
 Process index: 0
 Local process index: 0
@@ -13,15 +13,70 @@ Device: cuda
 
 Mixed precision type: fp16
 
-{'prediction_type', 'timestep_spacing', 'dynamic_thresholding_ratio', 'clip_sample_range', 'thresholding', 'variance_type', 'sample_max_value'} was not found in config. Values will be initialized to default values.
-Traceback (most recent call last):
+{'variance_type', 'clip_sample_range', 'prediction_type', 'thresholding', 'timestep_spacing', 'dynamic_thresholding_ratio', 'sample_max_value'} was not found in config. Values will be initialized to default values.
+{'force_upcast', 'scaling_factor'} was not found in config. Values will be initialized to default values.
+{'class_embeddings_concat', 'projection_class_embeddings_input_dim', 'addition_embed_type', 'resnet_skip_time_act', 'cross_attention_norm', 'encoder_hid_dim_type', 'addition_embed_type_num_heads', 'attention_type', 'time_cond_proj_dim', 'dual_cross_attention', 'num_attention_heads', 'dropout', 'resnet_time_scale_shift', 'only_cross_attention', 'use_linear_projection', 'mid_block_type', 'time_embedding_type', 'addition_time_embed_dim', 'conv_out_kernel', 'class_embed_type', 'resnet_out_scale_factor', 'conv_in_kernel', 'mid_block_only_cross_attention', 'time_embedding_dim', 'num_class_embeds', 'time_embedding_act_fn', 'upcast_attention', 'transformer_layers_per_block', 'encoder_hid_dim', 'timestep_post_act'} was not found in config. Values will be initialized to default values.
+10/15/2023 19:08:39 - INFO - __main__ - ***** Running training *****
+10/15/2023 19:08:39 - INFO - __main__ -   Num examples = 555
+10/15/2023 19:08:39 - INFO - __main__ -   Num Epochs = 36
+10/15/2023 19:08:39 - INFO - __main__ -   Instantaneous batch size per device = 1
+10/15/2023 19:08:39 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 4
+10/15/2023 19:08:39 - INFO - __main__ -   Gradient Accumulation steps = 4
+10/15/2023 19:08:39 - INFO - __main__ -   Total optimization steps = 5000
+Steps:   0%|          | 0/5000 [00:00<?, ?it/s]/workspace/emojifusion/3rd/diffusers/src/diffusers/models/attention_processor.py:1501: FutureWarning: `LoRAAttnProcessor` is deprecated and will be removed in version 0.26.0. Make sure use AttnProcessor instead by settingLoRA layers to `self.{to_q,to_k,to_v,to_out[0]}.lora_layer` respectively. This will be done automatically when using `LoraLoaderMixin.load_lora_weights`
+  deprecate(
+Steps:   0%|          | 0/5000 [00:02<?, ?it/s, lr=0.0001, step_loss=0.0029]Steps:   0%|          | 0/5000 [00:02<?, ?it/s, lr=0.0001, step_loss=0.0178]Steps:   0%|          | 0/5000 [00:02<?, ?it/s, lr=0.0001, step_loss=0.0841]Steps:   0%|          | 1/5000 [00:02<3:37:54,  2.62s/it, lr=0.0001, step_loss=0.0841]Steps:   0%|          | 1/5000 [00:02<3:37:54,  2.62s/it, lr=0.0001, step_loss=0.00605]Steps:   0%|          | 1/5000 [00:02<3:37:54,  2.62s/it, lr=0.0001, step_loss=0.0319] Steps:   0%|          | 1/5000 [00:02<3:37:54,  2.62s/it, lr=0.0001, step_loss=0.00981]Steps:   0%|          | 1/5000 [00:02<3:37:54,  2.62s/it, lr=0.0001, step_loss=0.0788] Steps:   0%|          | 2/5000 [00:03<1:52:18,  1.35s/it, lr=0.0001, step_loss=0.0788]Steps:   0%|          | 2/5000 [00:03<1:52:18,  1.35s/it, lr=0.0001, step_loss=0.0172]Steps:   0%|          | 2/5000 [00:03<1:52:18,  1.35s/it, lr=0.0001, step_loss=0.00624]Steps:   0%|          | 2/5000 [00:03<1:52:18,  1.35s/it, lr=0.0001, step_loss=0.0227] Steps:   0%|          | 2/5000 [00:03<1:52:18,  1.35s/it, lr=0.0001, step_loss=0.0381]Steps:   0%|          | 3/5000 [00:03<1:18:26,  1.06it/s, lr=0.0001, step_loss=0.0381]Steps:   0%|          | 3/5000 [00:03<1:18:26,  1.06it/s, lr=0.0001, step_loss=0.008] Steps:   0%|          | 3/5000 [00:03<1:18:26,  1.06it/s, lr=0.0001, step_loss=0.0167]Steps:   0%|          | 3/5000 [00:03<1:18:26,  1.06it/s, lr=0.0001, step_loss=0.00393]Steps:   0%|          | 3/5000 [00:03<1:18:26,  1.06it/s, lr=0.0001, step_loss=0.0142] Steps:   0%|          | 4/5000 [00:03<1:02:32,  1.33it/s, lr=0.0001, step_loss=0.0142]Steps:   0%|          | 4/5000 [00:03<1:02:32,  1.33it/s, lr=0.0001, step_loss=0.104] Steps:   0%|          | 4/5000 [00:04<1:02:32,  1.33it/s, lr=0.0001, step_loss=0.00361]Steps:   0%|          | 4/5000 [00:04<1:02:32,  1.33it/s, lr=0.0001, step_loss=0.00204]Steps:   0%|          | 4/5000 [00:04<1:02:32,  1.33it/s, lr=0.0001, step_loss=0.0499] Steps:   0%|          | 5/5000 [00:04<53:56,  1.54it/s, lr=0.0001, step_loss=0.0499]  Steps:   0%|          | 5/5000 [00:04<53:56,  1.54it/s, lr=0.0001, step_loss=0.0235]Steps:   0%|          | 5/5000 [00:04<53:56,  1.54it/s, lr=0.0001, step_loss=0.0285]Steps:   0%|          | 5/5000 [00:04<53:56,  1.54it/s, lr=0.0001, step_loss=0.00839]Steps:   0%|          | 5/5000 [00:04<53:56,  1.54it/s, lr=0.0001, step_loss=0.0737] Steps:   0%|          | 6/5000 [00:04<48:40,  1.71it/s, lr=0.0001, step_loss=0.0737]Steps:   0%|          | 6/5000 [00:04<48:40,  1.71it/s, lr=0.0001, step_loss=0.00892]Steps:   0%|          | 6/5000 [00:05<48:40,  1.71it/s, lr=0.0001, step_loss=0.0282] Steps:   0%|          | 6/5000 [00:05<48:40,  1.71it/s, lr=0.0001, step_loss=0.0514]Steps:   0%|          | 6/5000 [00:05<48:40,  1.71it/s, lr=0.0001, step_loss=0.00265]Steps:   0%|          | 7/5000 [00:05<45:18,  1.84it/s, lr=0.0001, step_loss=0.00265]Steps:   0%|          | 7/5000 [00:05<45:18,  1.84it/s, lr=0.0001, step_loss=0.0245] Steps:   0%|          | 7/5000 [00:05<45:18,  1.84it/s, lr=0.0001, step_loss=0.0327]Steps:   0%|          | 7/5000 [00:05<45:18,  1.84it/s, lr=0.0001, step_loss=0.0207]Steps:   0%|          | 7/5000 [00:05<45:18,  1.84it/s, lr=0.0001, step_loss=0.0131]Steps:   0%|          | 8/5000 [00:05<43:08,  1.93it/s, lr=0.0001, step_loss=0.0131]Steps:   0%|          | 8/5000 [00:05<43:08,  1.93it/s, lr=0.0001, step_loss=0.0199]Steps:   0%|          | 8/5000 [00:05<43:08,  1.93it/s, lr=0.0001, step_loss=0.0046]Steps:   0%|          | 8/5000 [00:06<43:08,  1.93it/s, lr=0.0001, step_loss=0.026] Steps:   0%|          | 8/5000 [00:06<43:08,  1.93it/s, lr=0.0001, step_loss=0.017]Steps:   0%|          | 9/5000 [00:06<41:27,  2.01it/s, lr=0.0001, step_loss=0.017]Steps:   0%|          | 9/5000 [00:06<41:27,  2.01it/s, lr=0.0001, step_loss=0.0263]Steps:   0%|          | 9/5000 [00:06<41:27,  2.01it/s, lr=0.0001, step_loss=0.151] Steps:   0%|          | 9/5000 [00:06<41:27,  2.01it/s, lr=0.0001, step_loss=0.102]Steps:   0%|          | 9/5000 [00:06<41:27,  2.01it/s, lr=0.0001, step_loss=0.0019]Steps:   0%|          | 10/5000 [00:06<40:32,  2.05it/s, lr=0.0001, step_loss=0.0019]Steps:   0%|          | 10/5000 [00:06<40:32,  2.05it/s, lr=0.0001, step_loss=0.00247]Steps:   0%|          | 10/5000 [00:06<40:32,  2.05it/s, lr=0.0001, step_loss=0.0205] Steps:   0%|          | 10/5000 [00:06<40:32,  2.05it/s, lr=0.0001, step_loss=0.00934]Steps:   0%|          | 10/5000 [00:07<40:32,  2.05it/s, lr=0.0001, step_loss=0.04]   Traceback (most recent call last):
   File "/workspace/emojifusion/3rd/diffusers/examples/text_to_image/train_text_to_image_lora.py", line 929, in <module>
     main()
-  File "/workspace/emojifusion/3rd/diffusers/examples/text_to_image/train_text_to_image_lora.py", line 419, in main
-    tokenizer = CLIPTokenizer.from_pretrained(
-  File "/opt/conda/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 2029, in from_pretrained
-    raise EnvironmentError(
-OSError: Can't load tokenizer for 'lambdalabs/sd-image-variations-diffusers'. If you were trying to load it from 'https://huggingface.co/models', make sure you don't have a local directory with the same name. Otherwise, make sure 'lambdalabs/sd-image-variations-diffusers' is the correct path to a directory containing all relevant files for a CLIPTokenizer tokenizer.
+  File "/workspace/emojifusion/3rd/diffusers/examples/text_to_image/train_text_to_image_lora.py", line 755, in main
+    model_pred = unet(noisy_latents, timesteps, encoder_hidden_states).sample
+  File "/opt/conda/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/workspace/emojifusion/3rd/diffusers/src/diffusers/models/unet_2d_condition.py", line 1052, in forward
+    sample = upsample_block(
+  File "/opt/conda/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/workspace/emojifusion/3rd/diffusers/src/diffusers/models/unet_2d_blocks.py", line 2269, in forward
+    hidden_states = attn(
+  File "/opt/conda/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/workspace/emojifusion/3rd/diffusers/src/diffusers/models/transformer_2d.py", line 315, in forward
+    hidden_states = block(
+  File "/opt/conda/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/workspace/emojifusion/3rd/diffusers/src/diffusers/models/attention.py", line 197, in forward
+    attn_output = self.attn1(
+  File "/opt/conda/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/workspace/emojifusion/3rd/diffusers/src/diffusers/models/attention_processor.py", line 423, in forward
+    return self.processor(
+  File "/workspace/emojifusion/3rd/diffusers/src/diffusers/models/attention_processor.py", line 581, in __call__
+    hidden_states = attn.batch_to_head_dim(hidden_states)
+  File "/workspace/emojifusion/3rd/diffusers/src/diffusers/models/attention_processor.py", line 435, in batch_to_head_dim
+    tensor = tensor.permute(0, 2, 1, 3).reshape(batch_size // head_size, seq_len, dim * head_size)
+KeyboardInterrupt
+Steps:   0%|          | 10/5000 [00:07<1:01:13,  1.36it/s, lr=0.0001, step_loss=0.04]
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.10/subprocess.py", line 1209, in wait
+    return self._wait(timeout=timeout)
+  File "/opt/conda/lib/python3.10/subprocess.py", line 1959, in _wait
+    (pid, sts) = self._try_wait(0)
+  File "/opt/conda/lib/python3.10/subprocess.py", line 1917, in _try_wait
+    (pid, sts) = os.waitpid(self.pid, wait_flags)
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "/opt/conda/bin/accelerate", line 8, in <module>
     sys.exit(main())
@@ -29,6 +84,10 @@ Traceback (most recent call last):
     args.func(args)
   File "/opt/conda/lib/python3.10/site-packages/accelerate/commands/launch.py", line 986, in launch_command
     simple_launcher(args)
-  File "/opt/conda/lib/python3.10/site-packages/accelerate/commands/launch.py", line 628, in simple_launcher
-    raise subprocess.CalledProcessError(returncode=process.returncode, cmd=cmd)
-subprocess.CalledProcessError: Command '['/opt/conda/bin/python', '3rd/diffusers/examples/text_to_image/train_text_to_image_lora.py', '--pretrained_model_name_or_path=lambdalabs/sd-image-variations-diffusers', '--dataset_name=data/emojis/emojisdescr.hf', '--dataloader_num_workers=8', '--resolution=512', '--center_crop', '--random_flip', '--train_batch_size=1', '--gradient_accumulation_steps=4', '--max_train_steps=5000', '--learning_rate=1e-04', '--max_grad_norm=1', '--lr_scheduler=cosine', '--lr_warmup_steps=0', '--output_dir=weights/finetuned_emojis_2', '--checkpointing_steps=500', '--validation_prompt=A face of evil gnome.', '--seed=1337']' returned non-zero exit status 1.
+  File "/opt/conda/lib/python3.10/site-packages/accelerate/commands/launch.py", line 625, in simple_launcher
+    process.wait()
+  File "/opt/conda/lib/python3.10/subprocess.py", line 1222, in wait
+    self._wait(timeout=sigint_timeout)
+  File "/opt/conda/lib/python3.10/subprocess.py", line 1953, in _wait
+    time.sleep(delay)
+KeyboardInterrupt

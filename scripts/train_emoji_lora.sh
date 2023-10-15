@@ -1,7 +1,8 @@
 export MODEL_NAME="lambdalabs/sd-image-variations-diffusers"
 export MODEL_NAME="runwayml/stable-diffusion-v1-5"
 export OUTPUT_DIR="weights/finetuned_emojis_2"
-export DATASET_NAME="data/emojis/emojisdescr.hf"
+export DATASET_NAME="data/emojis/emojisdescr.hf/train/data-00000-of-00001.arrow"
+
 
 accelerate launch --mixed_precision="fp16"  3rd/diffusers/examples/text_to_image/train_text_to_image_lora.py \
   --pretrained_model_name_or_path=$MODEL_NAME \
